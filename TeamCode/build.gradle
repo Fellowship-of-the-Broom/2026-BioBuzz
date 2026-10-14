@@ -27,6 +27,12 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.brott.dev/' }
+}
+
 dependencies {
     implementation project(':FtcRobotController')
+    implementation 'com.acmerobotics.roadrunner:core:0.5.6'
 }
