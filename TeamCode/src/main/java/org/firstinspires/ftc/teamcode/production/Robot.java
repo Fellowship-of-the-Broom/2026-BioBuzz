@@ -1,6 +1,6 @@
 package org.firstinspires.ftc.teamcode.production;
 
-import com.acmerobotics.roadrunner.geometry.Pose2d;
+//import com.acmerobotics.roadrunner.geometry.Pose2d;
 import com.qualcomm.hardware.gobilda.GoBildaPinpointDriver;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -20,7 +20,7 @@ import org.firstinspires.ftc.teamcode.lib.mechanisms.Launcher;
 import org.firstinspires.ftc.teamcode.lib.mechanisms.LauncherImpl;
 import org.firstinspires.ftc.teamcode.lib.mechanisms.TransferSystem;
 import org.firstinspires.ftc.teamcode.lib.mechanisms.TransferSystemImpl;
-import org.firstinspires.ftc.teamcode.roadrunner.drive.SampleMecanumDrive;
+//import org.firstinspires.ftc.teamcode.roadrunner.drive.SampleMecanumDrive;
 
 public class Robot implements Runnable{
 
@@ -74,7 +74,7 @@ public class Robot implements Runnable{
 //       // aprilTag.start();
 //        chassis.start():
 
-        SampleMecanumDrive drive = new SampleMecanumDrive(hardwareMap, telemetry);
+//        SampleMecanumDrive drive = new SampleMecanumDrive(hardwareMap, telemetry);
 
 
         GoBildaPinpointDriver pinpoint = hardwareMap.get(GoBildaPinpointDriver.class, "pinpoint");
@@ -93,9 +93,9 @@ public class Robot implements Runnable{
 
         while (this.opMode.opModeIsActive()){
 
-            drive.update();
+//            drive.update();
 
-            Pose2d pose = drive.getPoseEstimate();
+     //       Pose2d pose = drive.getPoseEstimate();
 
             intake.run();
 
@@ -117,9 +117,9 @@ public class Robot implements Runnable{
 
             pinpoint.update();
 
-            telemetry.addData("pinpoint x ticks", pose.getX());
-            telemetry.addData("pinpoint y ticks", pose.getY());
-            telemetry.addData("pinpoint heading (deg)", Math.toDegrees(pose.getHeading()));
+        //    telemetry.addData("pinpoint x ticks", pose.getX());
+        //    telemetry.addData("pinpoint y ticks", pose.getY());
+        //    telemetry.addData("pinpoint heading (deg)", Math.toDegrees(pose.getHeading()));
 //            telemetry.addData("x cm", (pose.getX()/1.9894));
 //            telemetry.addData("y cm", (pose.getY()/1.9894));
 
