@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.production;
 
 //import com.acmerobotics.roadrunner.geometry.Pose2d;
+import com.acmerobotics.roadrunner.Pose2d;
 import com.qualcomm.hardware.gobilda.GoBildaPinpointDriver;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -8,6 +9,8 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
+import org.firstinspires.ftc.teamcode.MecanumDrive;
+import org.firstinspires.ftc.teamcode.PinpointLocalizer;
 import org.firstinspires.ftc.teamcode.lib.mechanisms.AprilTag;
 import org.firstinspires.ftc.teamcode.lib.mechanisms.AutoGateState;
 import org.firstinspires.ftc.teamcode.lib.mechanisms.Chassis;
@@ -34,7 +37,10 @@ public class Robot implements Runnable{
     private final Intake intake;
     private final TransferSystem transferSystem;
     private final AllianceColor allianceColor;
+    private final PinpointLocalizer localizer;
     private boolean runChassis = true;
+    public static MecanumDrive.Params PARAMS = new MecanumDrive.Params();
+    private Pose2d pose;
 
 
 
@@ -58,6 +64,8 @@ public class Robot implements Runnable{
             launcher = new FakeLauncherImpl();
             transferSystem = new FakeTransferSystemImpl();
         }
+
+        localizer = new PinpointLocalizer(hardwareMap, PARAMS.inPerTick, pose);
 
 
 
