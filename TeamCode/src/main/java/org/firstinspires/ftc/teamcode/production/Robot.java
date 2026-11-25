@@ -105,14 +105,14 @@ public class Robot implements Runnable{
 
      //       Pose2d pose = drive.getPoseEstimate();
 
-            intake.run();
+            //intake.run();
 
             if(runChassis){
                 chassis.run();
             }
 
-            launcher.run();
-            transferSystem.run();
+            //launcher.run();
+            //transferSystem.run();
 
 
             try {
