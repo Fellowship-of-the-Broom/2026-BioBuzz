@@ -14,6 +14,7 @@ public class TurretImpl implements Turret {
     private final Telemetry telemetry;
     private final HardwareMap hardwareMap;
     private PinpointLocalizer pinpointLocalizer;
+    //TODO Measure constants
     private final double CELL1_X = 2;
     private final double CELL1_Y = 2;
 
@@ -21,6 +22,7 @@ public class TurretImpl implements Turret {
     private final double CELL2_Y = 2;
     private final double TICKS_PER_DEGREE = 2;
 
+    //TODO Add more fields because there are two turrets
     public TurretImpl(LinearOpMode opMode, PinpointLocalizer pinpointLocalizer) {
         this.hardwareMap = opMode.hardwareMap;
         this.telemetry = opMode.telemetry;
@@ -47,8 +49,8 @@ public class TurretImpl implements Turret {
         if (error > 5){
             turretServo.setPower(-1);
         }
-        
-        if (error < 5){
+
+        if (error < -5){
             turretServo.setPower(1);
         }
 
